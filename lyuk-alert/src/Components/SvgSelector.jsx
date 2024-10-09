@@ -11,7 +11,6 @@ export default function SvgSelector({ name }) {
         >
           <mask
             id="mask0_1310_5640"
-            style="mask-type:alpha"
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"
@@ -39,7 +38,6 @@ export default function SvgSelector({ name }) {
         >
           <mask
             id="mask0_1311_6617"
-            style="mask-type:alpha"
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"
@@ -67,7 +65,6 @@ export default function SvgSelector({ name }) {
         >
           <mask
             id="mask0_1311_6616"
-            style="mask-type:alpha"
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"
@@ -95,7 +92,6 @@ export default function SvgSelector({ name }) {
         >
           <mask
             id="mask0_1312_6020"
-            style="mask-type:alpha"
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"
@@ -123,7 +119,6 @@ export default function SvgSelector({ name }) {
         >
           <mask
             id="mask0_1312_6034"
-            style="mask-type:alpha"
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"
@@ -151,7 +146,6 @@ export default function SvgSelector({ name }) {
         >
           <mask
             id="mask0_1312_6033"
-            style="mask-type:alpha"
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"
@@ -179,7 +173,6 @@ export default function SvgSelector({ name }) {
         >
           <mask
             id="mask0_1311_6615"
-            style="mask-type:alpha"
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"
@@ -207,7 +200,6 @@ export default function SvgSelector({ name }) {
         >
           <mask
             id="mask0_1309_5730"
-            style="mask-type:alpha"
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"
@@ -235,7 +227,6 @@ export default function SvgSelector({ name }) {
         >
           <mask
             id="mask0_1446_559"
-            style="mask-type:alpha"
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"
@@ -263,7 +254,6 @@ export default function SvgSelector({ name }) {
         >
           <mask
             id="mask0_1446_566"
-            style="mask-type:alpha"
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"
@@ -291,7 +281,6 @@ export default function SvgSelector({ name }) {
         >
           <mask
             id="mask0_1446_573"
-            style="mask-type:alpha"
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"
@@ -319,7 +308,6 @@ export default function SvgSelector({ name }) {
         >
           <mask
             id="mask0_1455_2020"
-            style="mask-type:alpha"
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"
@@ -347,7 +335,6 @@ export default function SvgSelector({ name }) {
         >
           <mask
             id="mask0_1552_7880"
-            style="mask-type:alpha"
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"
@@ -375,7 +362,6 @@ export default function SvgSelector({ name }) {
         >
           <mask
             id="mask0_1729_2160"
-            style="mask-type:alpha"
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"
@@ -403,7 +389,6 @@ export default function SvgSelector({ name }) {
         >
           <mask
             id="mask0_1729_2332"
-            style="mask-type:alpha"
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"
@@ -436,7 +421,6 @@ export default function SvgSelector({ name }) {
         >
           <mask
             id="mask0_1763_1858"
-            style="mask-type:alpha"
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"
@@ -464,7 +448,6 @@ export default function SvgSelector({ name }) {
         >
           <mask
             id="mask0_1780_11962"
-            style="mask-type:alpha"
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"

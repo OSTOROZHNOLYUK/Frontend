@@ -1,0 +1,12 @@
+@import "../../scss/mixins";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  //для теста, потом удалить
+  h1{
+    @include h1();
+  }
+}

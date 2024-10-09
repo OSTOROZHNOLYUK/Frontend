@@ -1,5 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+/****************************************************************************************
+ Font Family
+ ****************************************************************************************/
+
+ $font_family_Montserrat: Montserrat;
+ 
 /****************************************************************************************
  Colors
 ****************************************************************************************/
 
+//White
+
+$palette_white_main: #FCFBFA; //icon-primary-oncolor, text-primary-oncolor, bg-primary,
+$palette_white_600: #FCFBFAE0; //text-secondary-oncolor, bg-secondary-inverse
+$palette_white_300: #FCFBFA24; //border-primary-inverse
+$palette_white_300: #FCFBFA17; //border-secondary-inverse
+
+// Black
+
+$palette_black_main: #2A201C; //icon-primary, text-primary, border-primary-progress-bar
+$palette_black_600: #2A201CE0; //bg-primary-inverse
+$palette_black_500: #2A201C99; //icon-secondary, text-secondary, border-primary
+$palette_black_400: #2A201C5C; //icon-disabled, text-disabled
+$palette_black_200: #2A201C14; //border-secondary, bg-primary-active
+$palette_black_100: #2A201C0A; //bg-primary-hover
+
+//Gray
+
+$palette_gray_main: #888DA7; //bg-secondary
+$palette_gray_800: #464D73; //bg-secondary-active
+$palette_gray_700: #646A8C; //bg-secondary-hover
+
+//Green
+
+$palette_green_main: #20EA60; //icon-success, text-success, border-success
+
+//Red 
+
+$palette_red_main: #F20508; //icon-critical, text-critical, border-critical
+
+//Orange
+
+$palette_orange_main: #F75307; //icon-accent, text-accent, border-focused, bg-accent
+$palette_orange_800: #C43E00; //border-accent-active
+$palette_orange_700: #DE4600; //border-accent-hover
+$palette_orange_600: #F75307E0; //icon-accent3
+$palette_orange_500: #F75307A3; //icon-accent-secondary, border-secondary-pin

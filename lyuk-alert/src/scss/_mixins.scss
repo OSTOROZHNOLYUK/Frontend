@@ -1,0 +1,34 @@
+/****************************************************************************************
+ text Styles
+ ****************************************************************************************/
+
+@mixin h1 {
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 110%;
+}
+
+@mixin h2 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 110%;
+}
+
+@mixin h3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 110%;
+}
+
+@mixin body-1 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 125%;
+}
+
+@mixin body-2 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+}
+
