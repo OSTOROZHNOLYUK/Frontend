@@ -1,4 +1,3 @@
-import style from "./Dropdown.module.scss";
 import Menu from "../../Buttons/MenuButton/MenuButton";
 import Button from "../../Buttons/Button/Button";
 
@@ -11,12 +10,12 @@ export default function Dropdown() {
     setDropdownState({ open: !dropdownState.open });
 
   return (
-    <div className={style.dropdownBlock}>
+    <div >
       <Button type="button" onClick={handleDropdownClick}>
         <Menu name="menu-default" />
       </Button>
       {dropdownState.open && (
-        <div className={style.dropdown}>
+        <div >
           <ul>
             <li>Item 1</li>
             <li>Item 2</li>
