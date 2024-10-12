@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import HeaderDropdown from './DropdownHeader';
 
 const Dropdown = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -18,7 +19,9 @@ const Dropdown = () => {
   };
 
   return (
-    <div style={{ backgroundColor: 'orange', padding: '20px' }}>
+    <>
+    <HeaderDropdown/>
+    <div style={{ backgroundColor: '#F86724', padding: '20px' }}>
       <ul style={{ listStyle: 'none', padding: 0, gap: 16}}>
         {items.map((item, index) => (
           <li
@@ -44,6 +47,7 @@ const Dropdown = () => {
         ))}
       </ul>
     </div>
+    </>
   );
 };
 
