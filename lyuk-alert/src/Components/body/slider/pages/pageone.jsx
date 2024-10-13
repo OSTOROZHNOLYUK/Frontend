@@ -2,7 +2,7 @@ import React from "react";
 import Lukebanner from "./lukebanner.png";
 import  Send from './send.png';
 
-const Banner = () => {
+const PageOne = () => {
     return(
         <div className="banner">
             <h1>Оcторожно ЛЮК -</h1>
@@ -12,4 +12,4 @@ const Banner = () => {
         </div>
     )
 }
-export default Banner;
+export default PageOne;

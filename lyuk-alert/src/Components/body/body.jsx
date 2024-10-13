@@ -1,5 +1,5 @@
 import React from "react";
-import Banner from "./banner/banner";
+import Slider from "./slider/slider"
 import Header from "../Header/Header";
 
  const Mainpage = () => {
@@ -7,7 +7,7 @@ import Header from "../Header/Header";
         <>
         <Header/>
         <div className="main">
-            <Banner />
+            <Slider/>
         </div></>
     )
 };
