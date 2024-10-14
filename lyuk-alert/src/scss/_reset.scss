@@ -1,3 +1,5 @@
+@import "variables";
+
 html,
 body,
 div,
@@ -159,24 +161,23 @@ q {
     outline: 0;
 }
 
-
 input,
 textarea {
     border-radius: 0;
     box-sizing: border-box;
 
-    // &::-webkit-input-placeholder {
-    //     color: $color_neutral_80;
+    &::-webkit-input-placeholder {
+        color: $palette_black_main;
 
-    // }
+    }
 
-    // &::-moz-placeholder {
-    //     color: $color_neutral_80;
-    // }
+    &::-moz-placeholder {
+        color: $palette_black_main;
+    }
 
-    // &:-ms-input-placeholder {
-    //     color: $color_neutral_80;
-    // }
+    &:-ms-input-placeholder {
+        color: $palette_black_main;
+    }
 
     &:focus {
         &::-webkit-input-placeholder {
@@ -222,7 +223,6 @@ button {
 * {
     box-sizing: border-box;
     word-wrap: break-word;
-    font-family: Montserrat;
 }
 
 /* Chrome, Safari, Edge, Opera */

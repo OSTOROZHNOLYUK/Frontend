@@ -32,3 +32,29 @@
   line-height: 125%;
 }
 
+@mixin body-3 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 125%;
+}
+
+/****************************************************************************************
+ Buttons
+ ****************************************************************************************/
+
+@mixin btn-s {
+  padding: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16.8px;
+  width: fit-content;
+  border-radius: 30px;
+}
+
+@mixin btn-m {
+  padding: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19.2px;
+  border-radius: 40px;
+}
