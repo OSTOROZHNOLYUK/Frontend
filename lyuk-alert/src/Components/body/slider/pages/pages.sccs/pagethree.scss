@@ -1,0 +1,54 @@
+.pagethree{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.page_girl{
+    width: 100%;
+}
+.page_title{
+
+width: 285px;
+height: 37px;
+left: 16px;
+top: 321px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 30px;
+line-height: 37px;
+color: #F75307;
+
+
+}
+.page_text{
+    width: 272px;
+    height: 44px;
+    left: 16px;
+    top: 366px;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #2A201C;
+    }
+.page_btn{
+display: flex;
+align-items: flex-start;
+gap: 10px;
+padding: 16px 52px;
+width: 328px;
+height: 56px;
+color: #fff;
+background: #3A3A40;
+border-radius: 40px;
+flex: none;
+order: 0;
+flex-grow: 0;
+justify-content: center;
+}
