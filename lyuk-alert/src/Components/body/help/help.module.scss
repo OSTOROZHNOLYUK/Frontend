@@ -1,0 +1,37 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+
+.help {
+  background-color: $palette_orange_main;
+  color: $palette_white_main;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  margin-bottom: 65px;
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    p {
+      @include body-2;
+    }
+  }
+
+  .btns {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    a {
+      @include btn-m;
+      background-color: $palette_white_main;
+      color: $palette_black_main;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  padding-top: 60px;
+  padding-bottom: 70px ;
+  .nums {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+    .num{
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      span{
+        color: $palette_orange_main;
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 80px;
+      }
+      p {
+        @include body-2;
+      }
+    }
+  }
+}
