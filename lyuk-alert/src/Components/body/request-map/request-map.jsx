@@ -2,6 +2,7 @@ import SvgSelector from "../../SvgSelector";
 import style from "./request-map.module.scss";
 import lyuk from "./images/lyuk.png";
 import lizaAlert from "./images/lizaAlert.png";
+import { Link } from "react-router-dom";
 
 export default function RequestMapAbout() {
   return (
@@ -15,12 +16,15 @@ export default function RequestMapAbout() {
           </p>
         </div>
         <div className={style.roundbutton}>
-          <a href="#">
+             <Link to={'/app;ication'}
+             ><a href="#">
             <SvgSelector name="chat_bubble" />
+         
             <p>
               Сообщить <br /> об открытом люке
             </p>
-          </a>
+          </a> 
+          </Link>
         </div>
       </div>
       <div className={style.map}>
@@ -32,10 +36,11 @@ export default function RequestMapAbout() {
           </p>
         </div>
         <div className={style.roundbutton}>
+          <Link to={'/map'}>
           <a href="#">
             <SvgSelector name="map" />
             <p>Открыть карту</p>
-          </a>
+          </a></Link>
         </div>
       </div>
       <div className={style.about}>
