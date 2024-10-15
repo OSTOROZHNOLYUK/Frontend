@@ -28,32 +28,6 @@ const Dropdown = () => {
   return (
     <>
     <HeaderDropdown/>
-    {/* <div style={{ backgroundColor: '#F86724', padding: '20px' }}>
-      <ul style={{ listStyle: 'none', padding: 0, gap: 16}}>
-        {items.map((item, index) => (
-          <li
-            key={index}
-            onClick={() => handleToggle(index)}
-            style={{
-              cursor: 'pointer',
-              color: 'white',
-              padding: '10px',
-              borderBottom: '1px solid white',
-            }}
-          >
-            {item}
-            {activeIndex === index && (
-              <span style={{ marginLeft: '10px' }}>&#8594;</span>
-            )}
-            {activeIndex === index && (
-              <div style={{ marginTop: '10px', color: 'white' }}>
-                Содержимое {item}
-              </div>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div> */}
         <div style={{ backgroundColor: '#F86724', color: 'white', padding: '20px' }}>
       <ul>
         {items.map((item, index) => (
@@ -63,7 +37,7 @@ const Dropdown = () => {
             {activeIndex === index && (
             <div style={{ marginLeft: '20px', marginTop: '5px' }}>
              {item.content.map((line, idx) => (
-              <div key={idx}><strong>{line}</strong></div>
+              <div key={idx}>{line}</div>
             ))}
             </div>
             )}

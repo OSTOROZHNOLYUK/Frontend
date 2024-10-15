@@ -16,7 +16,7 @@ export default function RequestMapAbout() {
           </p>
         </div>
         <div className={style.roundbutton}>
-             <Link to={'/app;ication'}
+             <Link to={'/application'}
              ><a href="#">
             <SvgSelector name="chat_bubble" />
          
