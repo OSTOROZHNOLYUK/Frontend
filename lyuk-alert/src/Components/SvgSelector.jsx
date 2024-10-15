@@ -516,5 +516,32 @@ export default function SvgSelector({ name }) {
           />
         </svg>
       );
+    case "x":
+      return (
+        <svg
+          width="15"
+          height="20"
+          viewBox="0 0 15 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            y1="-0.25"
+            x2="22.5821"
+            y2="-0.25"
+            transform="matrix(0.540454 -0.841373 0.816595 0.577212 1.07227 20)"
+            stroke="#F75307"
+            stroke-width="0.5"
+          />
+          <line
+            y1="-0.25"
+            x2="22.9451"
+            y2="-0.25"
+            transform="matrix(0.566569 0.824014 -0.520174 0.85406 1 1)"
+            stroke="#F75307"
+            stroke-width="0.5"
+          />
+        </svg>
+      );
   }
 }
