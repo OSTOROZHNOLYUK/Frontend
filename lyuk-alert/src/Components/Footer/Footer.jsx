@@ -1,6 +1,7 @@
 import style from "./Footer.module.scss";
 import Logo from "../Logo";
 import SvgSelector from "../SvgSelector";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   
@@ -15,12 +16,14 @@ export default function Footer() {
           <Logo name="logo-white" />
         </div>
         <div className={style.request}>
+          <Link to={'/application'}>
           <a href="#">
             Оставить заявку
             <span>
               <SvgSelector name="send" />
             </span>
           </a>
+          </Link>
         </div>
         <div className={style.social}>
           <div className={style.telegram}>

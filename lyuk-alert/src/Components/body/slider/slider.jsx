@@ -18,13 +18,13 @@ const Slider = () => {
         
     ];
 
-  //   useEffect(() => {
-  //     const interval = setInterval(() => {
-  //         setCurrentPage((prevPage) => (prevPage + 1) % pages.length);
-  //     }, 10000); // Период переключения в миллисекундах (10 секунд)
+    useEffect(() => {
+      const interval = setInterval(() => {
+          setCurrentPage((prevPage) => (prevPage + 1) % pages.length);
+      }, 10000); 
 
-  //     return () => clearInterval(interval); // Очистка интервала при размонтировании
-  // }, [pages.length]);
+      return () => clearInterval(interval);
+  }, [pages.length]);
 
   return (
     <div className={`slider ${currentPage === 0  || currentPage === 3 ? 'orange-background' : ''}`}>
