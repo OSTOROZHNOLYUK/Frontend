@@ -1,35 +1,48 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PageOne from './pages/pageone';
 import PageTwo from './pages/pagetwo';
 import PageThree from './pages/pagethree';
 import PageFour from './pages/pagefour';
+import './slider.scss';
 
 
-const pages = [<PageOne />, <PageTwo />, <PageThree />, <PageFour/>];
 
 const Slider = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentPage, setCurrentPage] = useState(0);
+    
+    const pages = [
+        <PageOne />,
+        <PageTwo />,
+        <PageThree />,
+        <PageFour/>
+        
+    ];
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % pages.length);
-  };
+    useEffect(() => {
+      const interval = setInterval(() => {
+          setCurrentPage((prevPage) => (prevPage + 1) % pages.length);
+      }, 10000); 
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      (prevIndex - 1 + pages.length) % pages.length
-    );
-  };
+      return () => clearInterval(interval); 
+  }, [pages.length]);
 
   return (
-    <div className="slider">
-      <button onClick={prevSlide} className="slider-button">Prev</button>
-      <div className="slider-content">
-        {pages[currentIndex]}
+    <div className={`slider ${currentPage === 0  || currentPage === 3 ? 'orange-background' : ''}`}>
+          <div className="slider-content">
+              {pages[currentPage]}
+          </div>
+          <div className="dots">
+              {pages.map((_, index) => (
+                  <span 
+                      key={index} 
+                      className={`dot ${currentPage === index ? 'active' : ''}`} 
+                      onClick={() => setCurrentPage(index)} 
+                  />
+              ))}
+          </div>
       </div>
-      <button onClick={nextSlide} className="slider-button">Next</button>
-    </div>
   );
 };
 
 export default Slider;
+

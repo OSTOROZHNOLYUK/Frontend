@@ -1,0 +1,30 @@
+
+.slider {
+    position: relative;
+    
+    &.orange-background {
+        background-color: #F86C2B; // Оранжевый фон для первого и третьего слайда
+    }
+}
+.slider-content{
+height: 567px;
+}
+.dots {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: gray; /* Серый цвет для неактивных точек */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: black; /* Черный цвет для активной точки */
+}

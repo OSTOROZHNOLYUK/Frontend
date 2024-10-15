@@ -1,0 +1,30 @@
+.spantext{
+    color: #F86C2B;
+}
+.PageTwo{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 52px;
+}
+.pagetwo_btn{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 24px;
+color: #fff;
+width: 275px;
+height: 275px;
+
+background: #F75307;
+border-radius: 1000px;
+
+flex: none;
+order: 0;
+flex-grow: 1;
+
+}

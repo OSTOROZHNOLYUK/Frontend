@@ -36,7 +36,7 @@ const Dropdown = () => {
           >
             {item}
             {activeIndex === index && (
-              <span style={{ marginLeft: '10px' }}>➡️</span>
+              <span style={{ marginLeft: '10px' }}>&#8594;</span>
             )}
             {activeIndex === index && (
               <div style={{ marginTop: '10px', color: 'white' }}>

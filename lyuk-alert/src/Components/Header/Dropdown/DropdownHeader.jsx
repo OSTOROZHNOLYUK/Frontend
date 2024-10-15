@@ -1,15 +1,16 @@
+// import Button from "../../Buttons/Button/Button";
 import Logo from "../../Logo";
-import style from "../Header.module.scss";
-import Exitbutton from "../../Buttons/DropdownButton/ExitButton";
+import './dropdownHeader.scss';
+// import style from "./dropdownHeader.scss";
  import { Link } from "react-router-dom";
 
 export default function HeaderDropdown (){
 
   return (
-    <div className={style.header + " " + "container" }>
-      <Logo name="logo-white"/>
+    <div className="headerDrop" >
+      <Logo name="logo-main-white"/>
       <Link to={"/"}>
-      <Exitbutton/>
+      <button className="imgbtn"></button>
       </Link>
     </div>
   );
