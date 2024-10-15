@@ -2,7 +2,7 @@
 @import "../../../scss/variables";
 
 .help {
-  background-color: $palette_orange_main;
+  background-color:#F86C2B;
   color: $palette_white_main;
   display: flex;
   flex-direction: column;
@@ -19,19 +19,27 @@
     p {
       @include body-2;
     }
+
+    span {
+      font-weight: 600;
+    }
   }
 
   .btns {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 8px;
     width: 100%;
+    
     a {
       @include btn-m;
       background-color: $palette_white_main;
       color: $palette_black_main;
       display: flex;
       justify-content: center;
+      width: 100%;
+      max-width: 328px;
     }
   }
 }
