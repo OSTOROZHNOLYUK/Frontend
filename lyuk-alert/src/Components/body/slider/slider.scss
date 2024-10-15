@@ -1,6 +1,7 @@
-
 .slider {
     position: relative;
+    max-width: 560px;
+    margin: 0 auto;
     
     &.orange-background {
         background-color: #F86C2B; // Оранжевый фон для первого и третьего слайда

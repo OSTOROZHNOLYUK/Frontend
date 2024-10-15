@@ -23,8 +23,8 @@ const Slider = () => {
           setCurrentPage((prevPage) => (prevPage + 1) % pages.length);
       }, 10000); 
 
-      return () => clearInterval(interval);
-  }, [pages.length]);
+        return () => clearInterval(interval); 
+    }, [pages.length]);
 
   return (
     <div className={`slider ${currentPage === 0  || currentPage === 3 ? 'orange-background' : ''}`}>

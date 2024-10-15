@@ -54,7 +54,7 @@ export default function Footer() {
         <div className={style.bottomLeft}>
           <div className={style.terms}>
             <p>Соглашение о конфиденциальности</p>
-            <p>Политика обработки персональных данных</p>
+            <p>Политика обработки <br/> персональных данных</p>
             <p>Публичная оферта</p>
           </div>
           <div className={style.copyright}>
