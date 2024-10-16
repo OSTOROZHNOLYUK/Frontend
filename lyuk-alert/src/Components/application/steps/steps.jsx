@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const cities = ['Москва', 'Санкт-Петербург', 'Новосибирск', 'Екатеринбург', 'Казань'];
+const cities = ['Москва', 'Санкт-Петербург', 'Новосибирск', 'Екатеринбург', 'Казань', 'Нижний Новгород'];
 
 const Step = () => {
   const [step, setStep] = useState(1);
@@ -36,14 +36,14 @@ const Step = () => {
 
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
+      <div className="steps_header" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px', borderBottom: '1px' }}>
         {['Шаг 1', 'Шаг 2', 'Шаг 3'].map((label, index) => (
           <div
             key={index}
             style={{
               color: step === index + 1 ? 'black' : 'gray',
               fontWeight: step === index + 1 ? 'bold' : 'normal',
-            }}
+              borderBottom: step === index + 1 ? 'black' : 'gray',   }}
           >
             {label}
           </div>

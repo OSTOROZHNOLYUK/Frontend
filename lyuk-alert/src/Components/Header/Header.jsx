@@ -7,7 +7,7 @@ export default function Header (){
 
   return (
     <div className={style.header + " " + "container" }>
-      <Logo name="logo-main-orange"/>
+      <Link to={"/"}> <Logo name="logo-main-orange"/></Link>
       <Link to={"/Dropdown"}>
       <MenuButton/>
       </Link>
