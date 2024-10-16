@@ -5,13 +5,13 @@ const Dropdown = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const items = [
-    { title: 'Оставить заявку', content: ['История создания проекта', ' статистика', 'результаты' ]},
-    { title: 'Открытые люки в моем городе', content: ['История создания проекта', ' статистика', 'результаты' ] },
+    { title: 'Оставить заявку', content: ['Оставить заявку' ]},
+    { title: 'Открытые люки в моем городе', content: ['Открытые люки в моем городе' ] },
     { title: 'О проекте', content: ['История создания проекта', ' статистика', 'результаты' ] },
-    { title: 'Как помочь', content: ['История создания проекта', ' статистика', 'результаты' ] },
-    { title: 'Полезные ресурсы', content: ['История создания проекта', ' статистика', 'результаты' ] },
-    { title: 'Новости', content: ['История создания проекта', ' статистика', 'результаты' ] },
-    { title: 'Контакты',content: ['История создания проекта', ' статистика', 'результаты' ]},
+    { title: 'Как помочь', content: ['Как помочь' ] },
+    { title: 'Полезные ресурсы', content: ['Полезные ресурсы' ] },
+    { title: 'Новости', content: ['Новости'] },
+    { title: 'Контакты',content: ['Контакты']},
   ];
 
   const toggleItem = (index) => {
@@ -28,7 +28,7 @@ const Dropdown = () => {
   return (
     <>
     <HeaderDropdown/>
-        <div style={{ backgroundColor: '#F86724', color: 'white', padding: '20px' }}>
+        <div className="container" style={{ backgroundColor: '#F86724', color: 'white', padding: '20px' }}>
       <ul>
         {items.map((item, index) => (
           <li className="title" key={index} onClick={() => toggleItem(index)} style={{ cursor: 'pointer' }}>
