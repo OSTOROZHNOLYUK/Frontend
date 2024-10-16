@@ -17,7 +17,7 @@ export default function Footer() {
         </div>
         <div className={style.request}>
           <Link to={'/application'}>
-          <a href="#">
+          <a className={style.a} href="#">
             Оставить заявку
             <span>
               <SvgSelector name="send" />

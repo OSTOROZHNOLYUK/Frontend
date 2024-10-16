@@ -15,7 +15,7 @@
     gap: 35px;
 
     .request {
-      a {
+      .a {
         @include btn-s;
         background-color: $palette_white_main;
         padding: 16px 36px;

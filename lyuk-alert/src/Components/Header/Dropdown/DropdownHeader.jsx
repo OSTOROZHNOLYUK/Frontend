@@ -7,7 +7,7 @@ import './dropdownHeader.scss';
 export default function HeaderDropdown (){
  
   return (
-    <div className="headerDrop" >
+    <div className="headerDrop container" >
       <Logo name="logo-main-white"/>
       <Link to={"/"}>
       <button className="imgbtn"></button>

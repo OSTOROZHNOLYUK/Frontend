@@ -1,54 +1,40 @@
-.banner{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 52px;
-}
-.banner_title{
-width: 318px;
-height: 40px;
-left: 16px;
-top: 52px;
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 700;
-font-size: 32px;
-line-height: 125%;
-color: #FCFBFA;
-}
-.banner_text{
+.banner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 52px;
 
-left: 4.44%;
-right: 8.89%;
-top: 18.87%;
-bottom: 67.02%;
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 125%;
-color: #FCFBFA;
-
+  .lyuk {
+    margin: auto 0 auto auto
+  }
 }
-.banner_img{
-width: 359px;
-height: 140.44px;
-top: 227.56px;
-left: 128px;
-
+.banner_title {
+  margin: auto;
+  width: 318px;
+  height: 40px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 125%;
+  color: #fcfbfa;
 }
-.banner_btn{
-    display: flex;
-    padding: 18px 20px;
-    width: 328px;
-    height: 60px;
-    left: 16px;
-    top: 418px;
-    background: #FCFBFA;
-    border-radius: 40px;
-    justify-content: center;
-    gap: 15px;
+.banner_text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  color: #fcfbfa;
+}
+.banner_btn {
+  display: flex;
+  margin: auto;
+  padding: 18px 20px;
+  width: 328px;
+  height: 60px;
+  left: 16px;
+  top: 418px;
+  background: #fcfbfa;
+  border-radius: 40px;
+  justify-content: center;
+  gap: 15px;
 }
