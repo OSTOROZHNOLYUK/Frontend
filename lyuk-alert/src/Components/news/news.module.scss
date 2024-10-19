@@ -1,0 +1,40 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.news {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-bottom: 65px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+
+    span {
+      font-size: 14px;
+      font-weight: 400;
+      color: $palette_orange_600;
+    }
+  }
+
+  .newsmain {
+    max-width: 100%;
+    border-radius: 15px;
+  }
+
+  .mainheader {
+    border-bottom: 1px solid #d9d9d9;
+
+    h3{
+      font-size: 18px;
+    }
+    span {
+      color: #C3C2C2;
+      font-size: 12px;
+      padding: 4px 0;
+    }
+  }
+}

@@ -1,11 +1,10 @@
-import four from "./pagefour.png";
-import './pages.sccs/pagefour.scss'
-
+import "./pages.sccs/pagefour.scss";
+import SvgSelector from "../../../SvgSelector"
 const PageFour = () => {
-    return(
-       <>
-       <img src={four} className="lukes"/>
-        </>
-    )
-}
+  return (
+    <div className="pagefour">
+      <SvgSelector name="pagefour"/>
+    </div>
+  );
+};
 export default PageFour;

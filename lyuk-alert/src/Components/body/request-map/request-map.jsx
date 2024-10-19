@@ -16,31 +16,33 @@ export default function RequestMapAbout() {
           </p>
         </div>
         <div className={style.roundbutton}>
-             <Link to={'/application'}
-             ><a href="#">
-            <SvgSelector name="chat_bubble" />
-         
-            <p>
-              Сообщить <br /> об открытом люке
-            </p>
-          </a> 
+          <Link to={"/application"}>
+            <div>
+              <SvgSelector name="chat_bubble" />
+              <p>
+                Сообщить <br /> об открытом люке
+              </p>
+            </div>
           </Link>
         </div>
       </div>
       <div className={style.map}>
         <div className={style.text}>
-          <h2>Все заявки <br /> в одном месте</h2>
+          <h2>
+            Все заявки <br /> в одном месте
+          </h2>
           <p>
             Ты можешь посмотреть заявки <br /> об открытых люках в любом городе
             России, узнать подробности и их текущий статус.
           </p>
         </div>
         <div className={style.roundbutton}>
-          <Link to={'/map'}>
-          <a href="#">
-            <SvgSelector name="map" />
-            <p>Открыть карту</p>
-          </a></Link>
+          <Link to={"/map"}>
+            <div>
+              <SvgSelector name="map" />
+              <p>Открыть карту</p>
+            </div>
+          </Link>
         </div>
       </div>
       <div className={style.about}>
@@ -48,7 +50,9 @@ export default function RequestMapAbout() {
           <h2>О проекте</h2>
           <p>ЛизаАлерт является создателем и куратором проекта.</p>
           <div className={style.aboutImages}>
-            <img src={lizaAlert} alt="lizaAlert" />
+            <a href="https://lizaalert.org/" target="blank">
+              <img src={lizaAlert} alt="lizaAlert" />
+            </a>
             <div className={style.svgcontainer}>
               <SvgSelector name="x" />
             </div>
