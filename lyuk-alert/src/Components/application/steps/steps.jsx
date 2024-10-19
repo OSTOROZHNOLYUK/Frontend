@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+// import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import './steps.scss';
 import photo from './photo.png';
 import map from './map.png'
@@ -163,7 +163,7 @@ const Step = () => {
         </div>
       )}
 
-      {mapVisible && (
+      {/* {mapVisible && (
         <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
           <GoogleMap
             id="map"
@@ -175,7 +175,7 @@ const Step = () => {
             {markerPosition && <Marker position={markerPosition} />}
           </GoogleMap>
         </LoadScript>
-      )}
+      )} */}
     </div>
   );
 };
