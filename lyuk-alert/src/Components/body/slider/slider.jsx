@@ -21,13 +21,13 @@ const Slider = () => {
     useEffect(() => {
       const interval = setInterval(() => {
           setCurrentPage((prevPage) => (prevPage + 1) % pages.length);
-      }, 10000); 
+      }, 70000); 
 
         return () => clearInterval(interval); 
     }, [pages.length]);
 
   return (
-    <div className={`slider ${currentPage === 0  || currentPage === 3 ? 'orange-background' : ''}`}>
+    <div className={`slider ${currentPage === 0 ? 'orange-background' : currentPage === 3 ? 'dark-orange-bg' : ''}`}>
           <div className="slider-content">
               {pages[currentPage]}
           </div>

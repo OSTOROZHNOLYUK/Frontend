@@ -17,12 +17,12 @@ export default function Footer() {
         </div>
         <div className={style.request}>
           <Link to={'/application'}>
-          <a className={style.a} href="#">
+          <div className={style.a}>
             Оставить заявку
             <span>
               <SvgSelector name="send" />
             </span>
-          </a>
+          </div>
           </Link>
         </div>
         <div className={style.social}>
@@ -45,7 +45,7 @@ export default function Footer() {
         </div>
         <div className={style.menu}>
           <a href="">Контакты</a>
-          <a href="">Хочу помочь</a>
+          <Link to={'/application'}>Хочу помочь</Link>
           <a href="">О проекте</a>
         </div>
       </div>

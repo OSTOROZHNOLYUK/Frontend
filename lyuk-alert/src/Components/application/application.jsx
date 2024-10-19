@@ -1,5 +1,6 @@
 import Header from "../Header/Header";
-import steps from './steps.png';
+import Footer from "../Footer/Footer";
+import steps from "./steps.png";
 import Step from "./steps/steps";
 import './application.scss'
 
@@ -13,6 +14,7 @@ const Application =()=> {
             <img className="steps" src={steps} alt="steps" width="100%"/>
         </div>
             <Step/>
+      <Footer />
         </>
     )
 }
