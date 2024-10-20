@@ -3,7 +3,8 @@ import { YMaps, Map, Placemark } from 'react-yandex-maps';
 import './steps.scss';
 import photo from './photo.png';
 import map from './map.png'
-import enter from './enter.png'
+import enter from './enter.png';
+import { Link } from "react-router-dom";
 
 const cities = [
   'Москва', 'Санкт-Петербург', 'Новосибирск', 'Екатеринбург', 'Казань',
@@ -21,6 +22,7 @@ const Step = () => {
   const [markerPosition, setMarkerPosition] = useState(null);
   const [isPhotoUploaded, setIsPhotoUploaded] = useState(false);
   const [manualAddress, setManualAddress] = useState('');
+  const [email, setEmail] = useState('');
 
   const onFileChange = (event) => {
     const selectedFiles = Array.from(event.target.files).slice(0, 5);
@@ -33,9 +35,6 @@ const Step = () => {
     setSelectedCity(event.target.value);
   };
 
-  const handleSubmit = () => {
-    console.log('Заявка отправлена:', { files, selectedCity, description, markerPosition });
-  };
 
   const nextImage = () => {
     if (currentImageIndex < files.length - 1) {
@@ -52,8 +51,37 @@ const Step = () => {
   const handleMapClick = (event) => {
     setMarkerPosition({ lat: event.latLng.lat(), lng: event.latLng.lng() });
   };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    
+    const formData = new FormData();
+    formData.append('email', email);
+    formData.append('description', description);
+    files.forEach((file) => {
+      formData.append('files', file);
+    });
 
-
+  try {
+    const response = await fetch('https://sf-hackathon.xyz/api/reports/new', {
+      method: 'POST',
+      body: formData,
+    });
+    if (response.ok) {
+      alert('Заявка успешно отправлена!');
+      // Сброс состояния после успешной отправки
+      setEmail('');
+      setDescription('');
+      setFiles([]);
+      setIsPhotoUploaded(false);
+      setStep(1); // Возврат к первому шагу
+    } else {
+      alert('Ошибка при отправке заявки. Попробуйте еще раз.');
+    }
+  } catch (error) {
+    console.error('Ошибка:', error);
+    alert('Ошибка при отправке заявки. Попробуйте еще раз.');
+  }
+};
 
   return (
     <div>
@@ -161,8 +189,9 @@ const Step = () => {
             placeholder="Здесь можно добавить описание проблемы, например, детали ситуации или уровень срочности"
           />    
           <button className="btn_back"  onClick={() => setStep(2)}>Назад</button>
+          <Link to={'/thanks'}>
           <button  className="btn_apply" onClick={handleSubmit}>Отправить заявку <img src={enter}/></button>
-      
+          </Link>
         </div>
       )}
        {mapVisible && (
