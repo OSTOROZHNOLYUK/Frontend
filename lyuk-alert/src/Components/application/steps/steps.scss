@@ -120,3 +120,23 @@ height: 170px;
     flex-direction: column;
     align-items: center;
 }
+.btn_apply{
+
+display: flex;
+padding: 16px 48px;
+justify-content: center;
+background: #F75307;
+border-radius: 40px;
+align-items: center;
+gap: 20px;
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+color: #fff;
+}
+.description {
+    border-radius: 10px;
+    height: 118px;
+
+}
