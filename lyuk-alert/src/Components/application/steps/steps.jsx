@@ -38,9 +38,9 @@ const Step = () => {
       setIsPhotoUploaded(true); 
     }
   };
-  // const handleCityChange = (event) => {
-  //   setSelectedCity(event.target.value);
-  // };
+  const handleCityChange = (event) => {
+    setSelectedCity(event.target.value);
+  };
 
 
   const nextImage = () => {
@@ -196,7 +196,7 @@ const Step = () => {
         <div className='stepBody'>
           <h2 className='step_title'>Отметьте локацию</h2>
           <p className='step_list'>Выберите город</p>
-          <select >
+          <select onClick={handleCityChange} >
             <option  
             value={city}
             onChange={(e) => setCity(e.target.value)}>Введите название города </option>
