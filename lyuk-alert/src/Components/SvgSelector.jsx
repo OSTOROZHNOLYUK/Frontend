@@ -475,8 +475,8 @@ export default function SvgSelector({ name }) {
         >
           <circle cx="20" cy="20" r="20" fill="#FCFBFA" />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M26.7212 11.1308C26.9917 11.015 27.2877 10.975 27.5786 11.0151C27.8694 11.0552 28.1443 11.1739 28.3748 11.3587C28.6052 11.5436 28.7827 11.7879 28.8889 12.0663C28.995 12.3446 29.0259 12.6468 28.9782 12.9414L26.4957 28.2601C26.2549 29.7378 24.6611 30.5852 23.329 29.8491C22.2147 29.2334 20.5597 28.2846 19.0711 27.2947C18.3267 26.7992 16.0467 25.2124 16.3269 24.0833C16.5677 23.1179 20.3988 19.49 22.588 17.3331C23.4472 16.4857 23.0554 15.9969 22.0407 16.7764C19.5209 18.7117 15.4753 21.6547 14.1377 22.4832C12.9578 23.2136 12.3426 23.3384 11.607 23.2136C10.2651 22.9865 9.0205 22.6346 8.00471 22.2059C6.63209 21.6269 6.69886 19.7072 8.00362 19.1482L26.7212 11.1308Z"
             fill="#303E3E"
           />
@@ -509,8 +509,8 @@ export default function SvgSelector({ name }) {
         >
           <rect width="46" height="46" rx="23" fill="white" />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M23.5074 13.6069V34H22.4926V13.6069L13.7176 20.8653L13 20.2717L23 12L33 20.2717L32.2824 20.8653L23.5074 13.6069Z"
             fill="#2A201C"
           />
@@ -531,7 +531,7 @@ export default function SvgSelector({ name }) {
             y2="-0.25"
             transform="matrix(0.540454 -0.841373 0.816595 0.577212 1.07227 20)"
             stroke="#F75307"
-            stroke-width="0.5"
+            strokeWidth="0.5"
           />
           <line
             y1="-0.25"
@@ -539,7 +539,7 @@ export default function SvgSelector({ name }) {
             y2="-0.25"
             transform="matrix(0.566569 0.824014 -0.520174 0.85406 1 1)"
             stroke="#F75307"
-            stroke-width="0.5"
+            strokeWidth="0.5"
           />
         </svg>
       );

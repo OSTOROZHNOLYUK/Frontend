@@ -63,7 +63,7 @@ export default function Footer() {
         </div>
         <div className={style.bottomRight}>
           <div className={style.ontop}>
-            <a href="#" onclick={scrollToTop}>
+            <a href="#" onClick={scrollToTop}>
               <SvgSelector name="ontop" />
               <span>В начало</span>
             </a>
