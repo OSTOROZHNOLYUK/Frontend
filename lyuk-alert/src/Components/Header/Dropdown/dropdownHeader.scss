@@ -1,14 +1,19 @@
-.headerDrop{
-    background-color: #F86724;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0 15px;
+.headerDrop {
+  background-color: #f86724;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 15px;
 }
 
-.dropdown{
-    .title {
-        border-bottom: 1px solid #FCFBFA73;
-        padding: 16px 0 ;
-    }
+.dropdown {
+  background-color: #F86724;
+  color: white;
+  padding: 20px;
+  height: 100%;
+}
+
+.dropdown-li {
+  border-bottom: 1px solid #fcfbfa73;
+  padding: 16px 0;
 }

@@ -7,6 +7,8 @@ import enter from './enter.png';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
+import step1 from "../steps.png";
+
 const cities = [
   'Москва', 'Санкт-Петербург', 'Новосибирск', 'Екатеринбург', 'Казань',
   'Нижний Новгород', 'Челябинск', 'Самара', 'Омск', 'Ростов-на-Дону',
@@ -138,7 +140,9 @@ const Step = () => {
 
   return (
     <div>
-      <div className="step" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
+      {step === 1 && <img className="steps" src={step1} alt="steps" width="100%" />}
+
+      <div className="step container" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
         {['Шаг 1', 'Шаг 2', 'Шаг 3'].map((label, index) => (
           <div
             key={index}
@@ -154,7 +158,7 @@ const Step = () => {
       </div>
 
       {step === 1 && (
-        <div className='stepBody'>
+        <div className='stepBody container'>
           <h2 className='step_title'> Загрузите фото</h2>
           <ul className='step_List'>
             <p>Необходимо загрузить несколько фото:</p>
