@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-// import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { YMaps, Map, Placemark } from 'react-yandex-maps';
 import './steps.scss';
 import photo from './photo.png';
 import map from './map.png'
+import enter from './enter.png';
+import { Link } from "react-router-dom";
 
 const cities = [
   'Москва', 'Санкт-Петербург', 'Новосибирск', 'Екатеринбург', 'Казань',
@@ -20,6 +22,7 @@ const Step = () => {
   const [markerPosition, setMarkerPosition] = useState(null);
   const [isPhotoUploaded, setIsPhotoUploaded] = useState(false);
   const [manualAddress, setManualAddress] = useState('');
+  const [email, setEmail] = useState('');
 
   const onFileChange = (event) => {
     const selectedFiles = Array.from(event.target.files).slice(0, 5);
@@ -28,14 +31,10 @@ const Step = () => {
       setIsPhotoUploaded(true); 
     }
   };
-
   const handleCityChange = (event) => {
     setSelectedCity(event.target.value);
   };
 
-  const handleSubmit = () => {
-    console.log('Заявка отправлена:', { files, selectedCity, description, markerPosition });
-  };
 
   const nextImage = () => {
     if (currentImageIndex < files.length - 1) {
@@ -52,8 +51,37 @@ const Step = () => {
   const handleMapClick = (event) => {
     setMarkerPosition({ lat: event.latLng.lat(), lng: event.latLng.lng() });
   };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    
+    const formData = new FormData();
+    formData.append('email', email);
+    formData.append('description', description);
+    files.forEach((file) => {
+      formData.append('files', file);
+    });
 
-
+  try {
+    const response = await fetch('https://sf-hackathon.xyz/api/reports/new', {
+      method: 'POST',
+      body: formData,
+    });
+    if (response.ok) {
+      alert('Заявка успешно отправлена!');
+      // Сброс состояния после успешной отправки
+      setEmail('');
+      setDescription('');
+      setFiles([]);
+      setIsPhotoUploaded(false);
+      setStep(1); // Возврат к первому шагу
+    } else {
+      alert('Ошибка при отправке заявки. Попробуйте еще раз.');
+    }
+  } catch (error) {
+    console.error('Ошибка:', error);
+    alert('Ошибка при отправке заявки. Попробуйте еще раз.');
+  }
+};
 
   return (
     <div>
@@ -104,7 +132,7 @@ const Step = () => {
             onChange={onFileChange}
           />
           <label className='stepOne_btn' htmlFor="file-upload" >
-            {isPhotoUploaded ? 'Добавьте фото' : 'Загрузить фото <img src="./photo"/>'}
+            {isPhotoUploaded ? 'Добавьте фото' : 'Загрузить фото'}
           </label>
           {isPhotoUploaded && ( 
         <button className="btn_next" onClick={() => setStep(2)}>Далее</button>
@@ -140,7 +168,7 @@ const Step = () => {
       )}
 
       {step === 3 && (
-        <div>
+        <div className='stepBody'>
           <h2>Шаг 3: Опишите проблему</h2>
           <div>
             {files.length > 0 && (
@@ -153,29 +181,30 @@ const Step = () => {
               </div>
             )}
           </div>
+          <p>Поле для заполнения <strong>необязательно</strong>,но <strong>детали важны</strong></p>
           <textarea
+          className='description'
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            placeholder="Опишите вашу проблему"
-          />
-          <button onClick={handleSubmit}>Отправить заявку</button>
+            placeholder="Здесь можно добавить описание проблемы, например, детали ситуации или уровень срочности"
+          />    
           <button className="btn_back"  onClick={() => setStep(2)}>Назад</button>
+          <Link to={'/thanks'}>
+          <button  className="btn_apply" onClick={handleSubmit}>Отправить заявку <img src={enter}/></button>
+          </Link>
         </div>
       )}
-
-      {/* {mapVisible && (
-        <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
-          <GoogleMap
-            id="map"
-            mapContainerStyle={{ height: "400px", width: "100%" }}
-            zoom={8}
-            center={{ lat: 55.7558, lng: 37.6173 }} 
-            onClick={handleMapClick}
-          >
-            {markerPosition && <Marker position={markerPosition} />}
-          </GoogleMap>
-        </LoadScript>
-      )} */}
+       {mapVisible && (
+            <YMaps>
+              <Map
+                defaultState={{ center: [55.7558, 37.6173], zoom: 8 }} 
+                onClick={handleMapClick}
+              >
+                {markerPosition && <Placemark geometry={markerPosition} />}
+              </Map>
+              <button onClick={() => setMapVisible(false)}>Закрыть карту </button>
+            </YMaps>
+          )}
     </div>
   );
 };
