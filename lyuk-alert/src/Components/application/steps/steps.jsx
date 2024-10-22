@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
 import './steps.scss';
-import photo from './photo.png';
 import map from './map.png'
 import enter from './enter.png';
 import { Link } from "react-router-dom";
 import axios from 'axios';
-
-import step1 from "../steps.png";
+import StepsSvg from '../StepsSvg';
+import SvgSelector from '../../SvgSelector';
 
 const cities = [
   'Москва', 'Санкт-Петербург', 'Новосибирск', 'Екатеринбург', 'Казань',
@@ -140,9 +139,11 @@ const Step = () => {
 
   return (
     <div>
-      {step === 1 && <img className="steps" src={step1} alt="steps" width="100%" />}
+      {step === 1 && <StepsSvg name="step1"/> }
+      {step === 2 && <StepsSvg name="step2"/> }
+      {step === 3 && <StepsSvg name="step3"/> }
 
-      <div className="step container" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
+      <div className="step container">
         {['Шаг 1', 'Шаг 2', 'Шаг 3'].map((label, index) => (
           <div
             key={index}
@@ -162,8 +163,8 @@ const Step = () => {
           <h2 className='step_title'> Загрузите фото</h2>
           <ul className='step_List'>
             <p>Необходимо загрузить несколько фото:</p>
-            <li>&bull;  фото <strong>	люка с близкого ракурса</strong></li>
-            <li>&bull;  фото <strong>люка и его окресностей</strong></li>
+            <li>&bull;  Фото <strong>	люка с близкого ракурса</strong></li>
+            <li>&bull;  Фото <strong>люка и его окресностей</strong></li>
           </ul>
           <div style={{ marginTop: '20px' }}>
         {files.length > 0 && (
@@ -189,15 +190,16 @@ const Step = () => {
             onChange={onFileChange}
           />
           <label className='stepOne_btn' htmlFor="file-upload" >
-            {isPhotoUploaded ? 'Добавьте фото' : 'Загрузить фото'}
+            {isPhotoUploaded ? 'Добавьте фото ' : 'Загрузить фото'}
+            <SvgSelector name="photo"/>
           </label>
           {isPhotoUploaded && ( 
-        <button className="btn_next" onClick={() => setStep(2)}>Далее</button>
+        <button className="btn_next step1" onClick={() => setStep(2)}>Далее</button>
       )}
       </div>
       )}
       {step === 2 && (
-        <div className='stepBody'>
+        <div className='stepBody container'>
           <h2 className='step_title'>Отметьте локацию</h2>
           <p className='step_list'>Выберите город</p>
           <select onClick={handleCityChange} >
@@ -229,13 +231,13 @@ const Step = () => {
       )}
 
       {step === 3 && (
-        <div className='stepBody'>
+        <div className='stepBody container'>
           <h2>Шаг 3: Опишите проблему</h2>
           <div>
             {files.length > 0 && (
               <div>
                 <img src={URL.createObjectURL(files[currentImageIndex])} alt={`uploaded ${currentImageIndex}`} style={{ width: '300px', height: 'auto' }} />
-                <div>
+                <div style={{display:"flex", justifyContent: "space-between"}}>
                   <button onClick={prevImage} disabled={currentImageIndex === 0}>Назад</button>
                   <button onClick={nextImage} disabled={currentImageIndex === files.length - 1}>Вперед</button>
                 </div>
@@ -258,12 +260,17 @@ const Step = () => {
        {mapVisible && (
             <YMaps>
               <Map
+                className='container'
+                style={{width:"100%", height:"300px"}}
                 defaultState={{ center: [55.7558, 37.6173], zoom: 8 }} 
                 onClick={handleMapClick}
               >
                 {markerPosition && <Placemark geometry={markerPosition} />}
               </Map>
-              <button onClick={() => setMapVisible(false)}>Закрыть карту </button>
+              <div className='container' style={{margin:"20px 0"}}>
+                <button onClick={() => setMapVisible(false)}>Закрыть карту </button>
+              </div>
+              
             </YMaps>
           )}
     </div>

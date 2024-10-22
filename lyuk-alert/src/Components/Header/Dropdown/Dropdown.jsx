@@ -37,6 +37,9 @@ const Dropdown = () => {
             <li className="dropdown-li"><h2>Открытые люки <br /> в моем городе</h2></li>
           </Link>
           <Link to={"/news"}>
+            <li className="dropdown-li"><h2>Как помочь</h2></li>
+          </Link>
+          <Link to={"/news"}>
             <li className="dropdown-li"><h2>Новости</h2></li>
           </Link>
         </ul>
