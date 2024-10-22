@@ -1,5 +1,6 @@
 {
   "name": "lyuk-alert",
+    "proxy": "https://sf-hackathon.xyz",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

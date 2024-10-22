@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { YMaps, Map, Placemark } from 'react-yandex-maps';
+import { YMaps, Map, Placemark, SearchControl } from 'react-yandex-maps';
 import './steps.scss';
 import map from './map.png'
 import enter from './enter.png';
@@ -67,7 +67,7 @@ const Step = () => {
     
 
     const jsonData = {
-      // email: email,
+      email: email,
       description: description,
       city: city,
       address: address,
@@ -80,16 +80,26 @@ const Step = () => {
 
     formData.append('json', JSON.stringify(jsonData));
     
-    if (file) {
-      formData.append('file', file);
+    // if (file) {
+    //   formData.append('file', file);
+    // } else {
+    //   setErrorMessage('Пожалуйста, выберите файл для загрузки.');
+    //   return;
+    // }
+    if (files.length > 0) {
+      files.forEach((file) => {
+        formData.append('files', file); 
+      });
     } else {
       setErrorMessage('Пожалуйста, выберите файл для загрузки.');
       return;
     }
-
     try {
-      const response = await axios.post('https://sf-hackathon.xyz/api/reports/new', formData);
-
+      const response = await axios.post('https://sf-hackathon.xyz/api/reports/new', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data', 
+        },
+      });
       if (response.status === 201) {
         setSuccessMessage(`Заявка успешно отправлена! Номер заявки: ${response.data.id}`);
         setErrorMessage('');
@@ -202,24 +212,22 @@ const Step = () => {
         <div className='stepBody container'>
           <h2 className='step_title'>Отметьте локацию</h2>
           <p className='step_list'>Выберите город</p>
-          <select onClick={handleCityChange} >
+           <select onClick={handleCityChange} >
             <option  
             value={city}
             onChange={(e) => setCity(e.target.value)}>Введите название города </option>
             {cities.map((city) => (
-              <option key={city} value={city}>{city}</option>
+              <option key={city} value={city} >{city}</option>
             ))}
-          </select>
+          </select> 
           {selectedCity && (
             <div className='inputs'>
               <input 
               className='adress_btn' 
                 type="text" 
                 placeholder="Введите адрес вручную" 
-                 
                 value={address}
           onChange={(e) => setAddress(e.target.value)}
-           
                 style={{ marginTop: '10px', padding: '5px', width: '100%' }} 
               />
               <button className='btn_map' onClick={() => setMapVisible(true)}> <img src={map}/>Выбрать на карте</button>
@@ -244,13 +252,29 @@ const Step = () => {
               </div>
             )}
           </div>
-          <p>Поле для заполнения <strong>необязательно</strong>,но <strong>детали важны</strong></p>
+           <input
+          type="email"
+          placeholder="Введите вашу электронную почту"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          className='email_input'
+        />
+            <input
+          type="conacts"
+          placeholder="Введите Ваш telegram"
+          value={contacts}
+          onChange={(e) => setContacts(e.target.value)}
+          required
+          className='email_input'
+        /> 
+        <p>Поле для заполнения <strong>необязательно</strong>,но <strong>детали важны</strong></p>
           <textarea
           className='description'
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Здесь можно добавить описание проблемы, например, детали ситуации или уровень срочности"
-          />    
+          /> 
           <button className="btn_back"  onClick={() => setStep(2)}>Назад</button>
           <Link to={'/thanks'}>
           <button  className="btn_apply" onClick={handleSubmit}>Отправить заявку <img src={enter}/></button>
@@ -259,19 +283,29 @@ const Step = () => {
       )}
        {mapVisible && (
             <YMaps>
-              <Map
-                className='container'
-                style={{width:"100%", height:"300px"}}
-                defaultState={{ center: [55.7558, 37.6173], zoom: 8 }} 
-                onClick={handleMapClick}
-              >
-                {markerPosition && <Placemark geometry={markerPosition} />}
-              </Map>
-              <div className='container' style={{margin:"20px 0"}}>
-                <button onClick={() => setMapVisible(false)}>Закрыть карту </button>
-              </div>
-              
-            </YMaps>
+            <Map 
+              style={{width: "100%", height: "500px", margin:"25px 0 60px 0"}}
+              defaultState={{
+                center: [55.75, 37.57],
+                zoom: 9,
+                controls: ["zoomControl"],
+              }}
+              modules={["control.ZoomControl"]}
+              value={geo}
+            onChange={(e) => setGeo(e.target.value)}
+            >
+              <SearchControl options={{ float: "left" }} />
+              <Placemark
+                modules={["geoObject.addon.balloon"]}
+                defaultGeometry={[55.75, 37.57]}
+                properties={{
+                  balloonContentBody: "Открытый люк",
+                }}
+                options={{iconColor: "green"}}
+              />
+               <button onClick={() => setMapVisible(false)}>Закрыть карту </button>
+            </Map>
+          </YMaps>
           )}
     </div>
   );
